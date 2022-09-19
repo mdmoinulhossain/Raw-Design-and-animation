@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pure CSS Dropdown Navigation</title>
+    <style>
+      body, html {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        font-size: 1em;
+      }
+      
+      .navbar {
+        width: 100%;
+        background-color: #000;
+        height: 80px;
+        color: #fff;
+      }
+      
+      .logo {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        float: left;
+        height: 50px;
+        padding: 15px 40px;
+        font-size: 1.5em;
+        line-height: 50px;
+      }
+      
+      .navbar .nav {
+        margin: 0;
+        padding: 0;
+        float: left;
+        list-style-type: none;
+      }
+      
+      .navbar .nav li.nav-item {
+        float: left;
+      }
+      
+      .navbar .nav li.nav-item > a {
+        display: inline-block;
+        padding: 15px 20px;
+        height: 50px;
+        line-height: 50px;
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      .navbar .nav li.nav-item > a:hover {
+        background-color: #333;
+      }
+      
+      .dropdown a:focus {
+        background-color: #333;
+      }
+      
+      .dropdown a:focus ~ .dropdown-container {
+        max-height: 500px;
+        transition:max-height 0.5s ease-in;
+        -webkit-transition:max-height 0.5s ease-in;
+        -moz-transition:max-height 0.5s ease-in;
+      }
+      
+      .dropdown-container {
+        position: absolute;
+        top: 80px;
+        max-height: 0;
+        overflow: hidden;
+        background: #000;
+        color: #fff;
+      }
+      
+      .dropdown-container a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      .dropdown-menu {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      
+      .dropdown-menu li a {
+        display: inline-block;
+        min-width: 200px;
+        padding: 15px 20px;
+        border-bottom: 1px solid #333;
+      }
+      
+      .dropdown-menu li a:hover {
+        text-decoration: none;
+        background: #333;
+      }
+      
+      .content {
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="logo" href="#">CSS Navigation</a>
+      <ul class="nav" id="primary-nav">
+        <li class="nav-item"><a href="">Home</a></li>
+        <li class="nav-item"><a href="">About</a></li>
+        <li class="nav-item dropdown">
+          <a href="#">Dropdown</a>
+          <div class="dropdown-container">
+            <div class="dropdown-inner">
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu-item"><a href="#">Sub Item 1</a></li>
+                <li class="dropdown-menu-item"><a href="#">Sub Item 2</a></li>
+                <li class="dropdown-menu-item"><a href="#">Sub Item 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h1>Pure CSS Navigation Source Code</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus mauris risus, at fringilla ante tempor vel. Duis nec lectus velit. Morbi malesuada, nulla id imperdiet posuere, nulla diam tincidunt neque, ac facilisis lacus tellus vitae nibh. Fusce malesuada, ipsum eget luctus pulvinar, nulla neque ultrices dui, accumsan malesuada eros tortor sed nisl.</p>
+      <p>Phasellus imperdiet libero ipsum, sit amet facilisis leo dignissim ut. Nulla euismod, nibh nec ornare tristique, leo quam posuere metus, sed vestibulum quam odio pellentesque mi. Proin consectetur lectus non interdum congue. Fusce rhoncus suscipit laoreet. Ut elementum sit amet quam a lacinia.</p>
+    </div>
+  </body>
+</html>
