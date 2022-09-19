@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" content="htmlcss bootstrap aside menu, vertical, sidebar nav menu CSS examples" />
+<meta name="description" content="Bootstrap 5 sidebar navigation menu example" />  
+
+<title>Demo - Bootstrap 5 sidebar vertical menu sample. html code example </title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+
+<style type="text/css">
+
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+	.sidebar li{ position: relative; }
+
+	.sidebar li .submenu{ 
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+		min-width: 240px;
+	}
+
+	[dir=rtl] .sidebar li .submenu{ 
+		right:100%; left:auto;
+	}
+
+	.sidebar li:hover{ background: var(--bs-light); }
+	.sidebar li:hover > .submenu{ display: block; }
+
+}	
+/* ============ desktop view .end// ============ */
+
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+
+	.sidebar .submenu, .sidebar .dropdown-menu{
+		position: static!important;
+		margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+	}
+
+}	
+/* ============ small devices .end// ============ */
+
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: var(--bs-dark);
+}
+.sidebar .nav-link:hover {
+    background: var(--bs-light);
+    color: var(--bs-primary);
+}
+
+</style>
+
+
+
+<script type="text/javascript">
+	window.addEventListener("resize", function() {
+		"use strict"; window.location.reload(); 
+	});
+
+	document.addEventListener("DOMContentLoaded", function(){
+		 // make it as accordion for smaller screens
+		if (window.innerWidth < 992) {
+
+			document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
+				
+				element.addEventListener('click', function (e) {
+
+				  	let nextEl = element.nextElementSibling;
+				  	let parentEl  = element.parentElement;
+				  	let allSubmenus_array =	parentEl.querySelectorAll('.submenu');
+
+				  	if(nextEl && nextEl.classList.contains('submenu')) {	
+				  		e.preventDefault();	
+				  		if(nextEl.style.display == 'block'){
+				  			nextEl.style.display = 'none';
+
+				  		} else {
+				  			nextEl.style.display = 'block';
+				  		}
+
+				  	}
+				});
+			})
+		}
+		// end if innerWidth
+
+	}); 
+	// DOMContentLoaded  end
+</script>
+
+</head>
+<body class="bg-light">
+
+<header class="section-header py-3">
+<div class="container">
+	<h2>Demo page </h2> 
+</div>
+</header> <!-- section-header.// -->
+
+<div class="container">
+
+<section class="section-content py-3">
+	<div class="row">
+		<aside class="col-lg-3"> 
+<!-- ============= COMPONENT ============== -->
+<nav class="sidebar card py-2 mb-4">
+<ul class="nav flex-column">
+	<li class="nav-item">
+		<a class="nav-link" href="#"> Link name </a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#"> Submenu links <b class="float-end">&raquo;</b> </a>
+		<ul class="submenu dropdown-menu">
+			<li><a class="nav-link" href="#">Submenu item 1 </a></li>
+		    <li><a class="nav-link" href="#">Submenu item 2 </a></li>
+		    <li><a class="nav-link" href="#">Submenu item 3 </a>
+		    </li>
+		</ul>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#"> Treeview category <b class="float-end">&raquo;</b> </a>
+		<ul class="submenu dropdown-menu">
+			<li><a class="nav-link" href="#">Submenu item 1 </a></li>
+		    <li><a class="nav-link" href="#">Submenu item 2 </a></li>
+		    <li><a class="nav-link" href="#">Submenu item 3 <b class="float-end">&raquo;</b> </a>
+		    	<ul class="submenu dropdown-menu">
+				    <li><a class="nav-link" href="#">Multi level 1</a></li>
+				    <li><a class="nav-link" href="#">Multi level 2</a></li>
+				    <li><a class="nav-link" href="#">Multi level 3</a></li>
+				</ul>
+		    </li>
+		</ul>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#"> Another page </a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#"> Demo link </a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#"> Menu item </a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#"> Something </a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="#"> Other link </a>
+	</li>
+</ul>
+</nav>
+<!-- ============= COMPONENT END// ============== -->	
+		</aside>
+		<main class="col-lg-9">
+
+<h6>Demo for sidebar nav menu links. <br> Based on Bootstrap 5 CSS framework.  </h6>
+<p>For this demo page you should connect to the internet to receive files from CDN  like Bootstrap5 CSS, Bootstrap5 JS</p>
+
+<p class="text-muted"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+<a href="https://bootstrap-menu.com/detail-sidebar-nav-submenu.html" class="btn btn-success"> &laquo Back to tutorial or Download code</a>
+
+		</main>
+	</div>
+</section>
+
+</div><!-- container //  -->
+
+</body>
+</html>
