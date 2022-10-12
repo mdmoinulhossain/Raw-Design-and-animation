@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card_body {
+  display: flex;
+  gap: 10px;
+  margin-top: 10%;
+  padding: 0 10px;
+}
+.card {
+  border: 1px solid #000;
+  width: 250px;
+  height: auto;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.card_a {
+  background-color: #217074;
+  animation: 3s ease 1s infinite mymove;
+}
+.card_b {
+  background-color: #37745b;
+  animation: 3.2s ease 1s infinite mymove;
+}
+.card_c {
+  background-color: #8b9d77;
+  animation: 3.4s ease 1s infinite mymove;
+}
+.card_d {
+  background-color: #e7eaef;
+  animation: 3.6s ease 1s infinite mymove;
+}
+.card_e {
+  background-color: #edc5ab;
+  animation: 3.8s ease 1s infinite mymove;
+}
+.card_f {
+  background-color: #746c21;
+  animation: 3.1s ease 1s infinite mymove;
+}
+
+@keyframes mymove {
+  0%,
+  50%,
+  100% {
+    transform: scale(1, 1);
+  }
+  30%,
+  80% {
+    transform: scale(0.92, 0.95);
+  }
+}
