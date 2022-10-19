@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text-reflects</title>
+  </head>
+  <body>
+    <!-- Text Horizontally -->
+    <style>
+      span {
+        display: Inline-block;
+        /* margin: 50px; */
+      }
+      .GFG {
+        transform: scale(-1, 1);
+        color: #000080;
+        -moz-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+      }
+    </style>
+    <div>
+      <h3>1.</h3>
+      <!-- here write your text you want to flip -->
+      <span>GeeksforGeeks</span>
+      <!-- your class name must be as you
+		above written with .class name -->
+      <span class="GFG">GeeksforGeeks</span>
+    </div>
+
+    <!-- text upside-down -->
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 100vh; */
+      }
+      .backwards {
+        display: inline;
+        font-size: 100px;
+        font-style: bold;
+        -moz-transform: scale(-1, -1);
+        -webkit-transform: scale(-1, -1);
+        -o-transform: scale(-1, -1);
+        -ms-transform: scale(-1, -1);
+        transform: scale(-1, -1);
+      }
+    </style>
+
+    <ul class="container">
+      <b>2.</b>
+      <li class="backwards">G</li>
+      <li class="backwards">e</li>
+      <li class="backwards">e</li>
+      <li class="backwards">k</li>
+      <li class="backwards">S</li>
+    </ul>
+
+    <!-- text vertically -->
+
+    <style>
+      span {
+        display: Inline-block;
+        margin: 50px;
+      }
+
+      .fgg {
+        transform: scale(1, -1);
+        color: #000080;
+        -moz-transform: scale(1, -1);
+        -webkit-transform: scale(1, -1);
+        -o-transform: scale(1, -1);
+        -ms-transform: scale(1, -1);
+        transform: scale(1, -1);
+      }
+    </style>
+    <h3>3.</h3>
+    <span>GeeksforGeeks</span>
+    <!-- here write your text you want to flip -->
+    <span class="fgg">GeeksforGeeks</span>
+    <!-- your class name must be as you above written with .class name -->
+
+    <!-- Perfect mirror -->
+    <style>
+      .main {
+        display: inline-flex;
+      }
+
+      .box {
+        margin-top: 100px;
+        font-size: 5em;
+        color: #000;
+        font-weight: 900;
+      }
+
+      #box1::after {
+        content: "GeeksforGeeks";
+        display: flex;
+        transform: rotateX(180deg);
+        -webkit-background-clip: text;
+        color: #ddd;
+      }
+    </style>
+    <div class="main">
+      <div class="box" id="box1">GeeksforGeeks</div>
+    </div>
+  </body>
+</html>
