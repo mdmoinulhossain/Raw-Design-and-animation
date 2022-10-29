@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 100px;    
+}
+
+.overview{
+    display: flex;
+    /* gap: 5px; */
+}
+.bar{
+	width: 10px;
+	height: 500px;
+	background-color: red;
+}
+.mini-bars{
+    width: 10px;
+    height: 5px;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2px;
+}
+
+input[type="range"] {
+    appearance: slider-vertical;
+  }
