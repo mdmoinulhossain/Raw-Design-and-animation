@@ -1,0 +1,43 @@
+body {
+  background-color: #000;
+}
+.card {
+  width: 100px !important;
+  height: 100px !important;
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 100px;
+  position: relative;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 100px;
+  width: 60px;
+  overflow: hidden;
+}
+.card:hover::before {
+  animation: made 1s;
+}
+.card a {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+}
+.card:nth-child(1) {
+  margin-left: 0;
+  background-color: #33cccc;
+}
+.card:nth-child(2) {
+  background-color: #006600;
+}
+.card:nth-child(3) {
+  background-color: #cc6600;
+}
+
+.shine-animation {
+  display: flex;
+}
