@@ -5,11 +5,9 @@ body {
   width: 100px !important;
   height: 100px !important;
   margin-left: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-size: 100px;
   position: relative;
+  overflow: hidden;
 }
 .card::before {
   content: "";
@@ -17,10 +15,29 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   height: 100px;
   width: 60px;
-  overflow: hidden;
+  left: -90px;
+  transform: skewX(-30deg);
+  animation: animy 2s infinite;
 }
+
+/* To start animation after hover */
 .card:hover::before {
-  animation: made 1s;
+  /* animation: animy 2s infinite;  */
+}
+
+@keyframes animy {
+  /* come form single side */
+  0% {
+    left: -90px;
+  }
+  100% {
+    left: 160px;
+  }
+
+  /* come from both side */
+  /* 50% {
+    left: 160px;
+  } */
 }
 .card a {
   text-decoration: none;
