@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega menu</title>
+</head>
+<body>
+    <ul class="first">
+        <li><a href="#">Women</a>
+            <ul class="second">
+                <li><a href="#">Items 1</a></li>
+                <li><a href="#">Items 2</a></li>
+                <li><a href="#">Items 3</a>
+                    <ul class="third">
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+                        <li><a href="#">Item 4</a>
+                            <div class="fourth">
+                                <ul>
+                                    <li><a href="#">Items 3.4.1</a></li>
+                                    <li><a href="#">Items 3.4.2</a></li>
+                                </ul>
+                                <div class="image">
+                                    <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg" alt="Nai">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Items 4</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Child</a></li>
+        <li><a href="#">Favorite</a></li>
+        <li><a href="#">Others</a></li>
+    </ul>
+
+
+
+
+
+<style>
+body{
+    margin: 0;
+    padding: 0;
+}
+ul li {list-style-type: none;}
+    .first{
+        width:  200px;
+        padding: 10px 2px;
+        border: 1px solid #ccc;
+        height: 300px;
+    }
+    .first li a{
+        text-decoration: none;
+        display: block;
+        padding: 5px 0px;
+        color: #222;
+    }
+    .first li:hover a {
+        color:#000;
+        background: #ccc;
+    }
+    .second{
+        position: absolute;
+        width: 200px;
+        padding: 10px 0px;
+        height: 300px;
+        border: 1px solid #ccc;
+        margin-left: 200px;
+        top: 20px;
+        display: none;
+    }
+    .first li:hover .second li a{    /* hover effect off */
+        background: #fff;
+        color: #222;
+    }
+    .first li .second li:hover a {
+        color: #fff;
+        background: #ccc;
+    }
+
+    .first li:hover .second{
+        display: block;
+    }
+    .third{
+        position: absolute;
+        width: 200px;
+        padding: 10px 0px;
+        height: 300px;
+        border: 1px solid #ccc;
+        margin-left: 200px;
+        top: 20px;
+        display: none;
+    }
+    .first li .second li:hover .third a {
+        background: #fff;
+        color: #222;
+    }
+    .first li .second li .third li:hover a {
+        color: #fff;
+        background: #222;
+    }
+
+    .first li .second li:hover .third{
+        display: block;
+    }
+    .fourth{
+        position: absolute;
+        width: 700px;
+        padding: 10px 0px;
+        height: 300px;
+        border: 1px solid #ccc;
+        margin-left: 200px;
+        top: 20px;
+        overflow: hidden;
+        display: none;
+    }
+    .fourth ul{
+        width: 25%;
+        float: left;
+    }
+    .image{
+        width: 45%;
+        float: right;
+        margin-top: -20px;
+    }
+    .first li .second li .third li:hover .fourth ul li a {
+        background: #fff;
+        color: #222;
+    }
+    .first li .second li .third li .fourth ul li:hover a {
+        color: #fff;
+        background: #222;
+    }
+
+    .first li .second li .third li:hover .fourth{
+        display: block;
+    }
+</style>
+</body>
+</html>
