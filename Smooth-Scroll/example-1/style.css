@@ -1,0 +1,33 @@
+html, body, section {
+  block-size: 100%;
+}
+
+html {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section:nth-of-type(even) {
+  color: white;
+  background: black;
+}
+
+section:nth-of-type(odd) {
+  color: black;
+  background: white;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  font-size: 4rem;
+}

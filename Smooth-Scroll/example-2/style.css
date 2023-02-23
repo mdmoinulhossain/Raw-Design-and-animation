@@ -1,0 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+#section1 {
+  height: 600px;
+  background-color: #ff0000;
+}
+
+#section2 {
+  height: 600px;
+  background-color: #008000;
+}
