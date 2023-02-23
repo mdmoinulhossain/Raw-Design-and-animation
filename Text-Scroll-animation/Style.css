@@ -1,0 +1,31 @@
+article {
+  /*  leverage cascade for cross-browser gradients  */
+  background: radial-gradient(hsl(100 100% 60%), hsl(200 100% 60%)) fixed;
+  background: conic-gradient(
+      hsl(100 100% 60%),
+      hsl(200 100% 60%),
+      hsl(100 100% 60%)
+    )
+    fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+body {
+  background: hsl(204 100% 5%);
+  /*   background: conic-gradient(
+      hsl(100 100% 60%), 
+      hsl(200 100% 60%),
+      hsl(100 100% 60%)
+    ) fixed; */
+  color: white;
+  min-block-size: 200vh;
+  min-inline-size: 100%;
+  padding: 5vmin;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  font-family: system-ui;
+  font-size: min(200%, 5vmin);
+}
