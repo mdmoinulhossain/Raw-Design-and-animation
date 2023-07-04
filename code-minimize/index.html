@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML code Minify/prettify</title>
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script src="./lib.js"></script>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        code = $("textarea").eq(0);
+
+        $("button")
+          .eq(0)
+          .click(function () {
+            code.css("white-space", "normal").show_code(code.minify());
+          });
+
+        $("button")
+          .eq(1)
+          .click(function () {
+            val = $.replace_tag(code.minify());
+            el = $("<div></div>").html(val);
+            $.prettify_code(el);
+            code.css("white-space", "pre").show_code($.undo_tag(el.html()));
+          });
+      });
+    </script>
+
+    <textarea placeholder="Write or paste code here"></textarea>
+
+    <button>Minify</button>
+    <button>Prettify</button>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-36251023-1"]);
+      _gaq.push(["_setDomainName", "jqueryscript.net"]);
+      _gaq.push(["_trackPageview"]);
+
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
