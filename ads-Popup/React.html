@@ -1,0 +1,65 @@
+<!-- This popup is implement in react js -->
+import React, { useEffect } from "react";
+import Footer from "../Shared/Footer/Footer";
+import Header from "../Shared/Header/Header";
+
+import "./Home.css";
+import Facilities from "./HomeComponents/Facilities";
+import MenuSection from "./HomeComponents/MenuSection";
+import OfferSection from "./HomeComponents/OfferSection";
+import Video from "./HomeComponents/Video";
+import Welcome from "./HomeComponents/Welcome";
+
+const Home = () => {
+  useEffect(() => {
+    const blur = document.getElementById("blur");
+    if (blur) {
+      setTimeout(() => {
+        const popup = document.querySelector(".adsPopup");
+        if (popup) {
+          popup.style.display = "block";
+          blur.classList.add("active");
+        }
+      }, 2000);
+    }
+  }, []);
+
+  const handleClose = () => {
+    const popup = document.querySelector(".adsPopup");
+    if (popup) {
+      popup.style.display = "none";
+      const blur = document.getElementById("blur");
+      if (blur) {
+        blur.classList.remove("active");
+      }
+    }
+  };
+
+  return (
+    <>
+      <main className="homepage" id="blur">
+        <Header />
+        <Video />
+        <Welcome />
+        <MenuSection />
+        <OfferSection />
+        <Facilities />
+        <Footer />
+      </main>
+      <div class="adsPopup">
+        <button id="close" onClick={handleClose}>
+          &times;
+        </button>
+        <h2>This Is The Title</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          distinctio fugiat alias iure qui, commodi minima magni ullam aliquam
+          dignissimos?
+        </p>
+        <a href="#">Let's Go</a>
+      </div>
+    </>
+  );
+};
+
+export default Home;
