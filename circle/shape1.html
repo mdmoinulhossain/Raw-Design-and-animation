@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .pie {
+        overflow: hidden;
+        position: relative;
+        margin: 1em auto;
+        border: dashed 1px;
+        padding: 0;
+        width: 32em;
+        height: 32em;
+        border-radius: 50%;
+        list-style: none;
+      }
+      .slice {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 50%;
+        transform-origin: 0% 100%;
+      }
+      .slice:first-child {
+        transform: rotate(15deg) skewY(-22.5deg);
+      }
+      .slice-contents {
+        position: absolute;
+        left: -100%;
+        width: 200%;
+        height: 200%;
+        border-radius: 50%;
+        background: lightblue;
+      }
+      .slice:first-child .slice-contents {
+        transform: skewY(22.5deg); /* unskew slice contents */
+      }
+
+      .slice:hover .slice-contents {
+        background: violet;
+      } /* highlight on hover */
+    </style>
+  </head>
+  <body>
+    <ul class="pie">
+      <li class="slice">
+        <div class="slice-contents">Class</div>
+      </li>
+    </ul>
+  </body>
+</html>

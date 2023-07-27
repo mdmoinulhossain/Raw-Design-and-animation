@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rainbow-wheel {
+        position: relative;
+        margin: 1em auto;
+        border: solid 2em white;
+        width: 16em;
+        height: 16em;
+        border-radius: 50%;
+        background: linear-gradient(36deg, #272b66 42.34%, transparent 42.34%) 0
+            0,
+          linear-gradient(72deg, #2d559f 75.48%, transparent 75.48%) 0 0,
+          linear-gradient(-36deg, #9ac147 42.34%, transparent 42.34%) 100% 0,
+          linear-gradient(-72deg, #639b47 75.48%, transparent 75.48%) 100% 0,
+          linear-gradient(36deg, transparent 57.66%, #e1e23b 57.66%) 100% 100%,
+          linear-gradient(72deg, transparent 24.52%, #f7941e 24.52%) 100% 100%,
+          linear-gradient(-36deg, transparent 57.66%, #662a6c 57.66%) 0 100%,
+          linear-gradient(-72deg, transparent 24.52%, #9a1d34 24.52%) 0 100%,
+          #43a1cd linear-gradient(#ba3e2e, #ba3e2e) 50% 100%;
+        background-repeat: no-repeat;
+        background-size: 50% 50%;
+        transition: 1s;
+      }
+
+      .rainbow-wheel::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -2.8em;
+        width: 5.6em;
+        height: 5.6em;
+        border-radius: 50%;
+        /* add slash at end of line to see central part *
+  opacity: .15; /**/
+        background: white;
+        content: "";
+      }
+
+      .rainbow-wheel:hover {
+        transform: rotate(360deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rainbow-wheel"></div>
+  </body>
+</html>
