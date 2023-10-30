@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Tabs - Fixed selected tabs after page refresh.</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.tabs {
+    width: 150px;
+    background: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab" id="tab1">Tab 1</div>
+        <div class="tab" id="tab2">Tab 2</div>
+        <div class="tab" id="tab3">Tab 3</div>
+    </div>
+    <div class="content">
+        <div class="tab-content" id="content1">Content for Tab 1</div>
+        <div class="tab-content" id="content2">Content for Tab 2</div>
+        <div class="tab-content" id="content3">Content for Tab 3</div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        function setActiveTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach((tabContent) => {
+                tabContent.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            // Store the active tab in local storage
+            localStorage.setItem('activeTab', tabId);
+        }
+
+        document.querySelectorAll('.tab').forEach((tab) => {
+            tab.addEventListener('click', () => {
+                setActiveTab(tab.id.replace('tab', 'content'));
+            });
+        });
+
+        // Check if there's an active tab in local storage and set it
+        const activeTab = localStorage.getItem('activeTab');
+        if (activeTab) {
+            setActiveTab(activeTab);
+        }
+    });
+
+    </script>
+</body>
+</html>
