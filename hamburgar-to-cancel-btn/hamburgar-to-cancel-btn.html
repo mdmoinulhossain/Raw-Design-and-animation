@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" 
+          href=
+"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>
+        Converting the hamburger icon
+        to X and vice versa
+    </title>
+
+    <style>
+        /* Styling the menu button */
+        .menu-btn {
+            position: absolute;
+            z-index: 3;
+            right: 35px;
+            top: 35px;
+            cursor: pointer;
+            transition: all 0.5s ease-out;
+        }
+
+        /* Styling the hamburger lines */
+        .menu-btn .btn-line {
+            width: 28px;
+            height: 3px;
+            margin: 0 0 5px 0;
+            background: black;
+            transition: all 0.5s ease-out;
+        }
+
+        /* Adding transform to the X */
+        .menu-btn.close {
+            transform: rotate(180deg);
+        }
+
+        /* Styling the three lines to make it an X */
+        .menu-btn.close .btn-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-btn.close .btn-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.close .btn-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Styling the position of the menu icon */
+        .menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 0.9;
+            visibility: hidden;
+        }
+
+        .menu.show {
+            visibility: visible;
+        }
+
+        /* Adding a transition delay 
+          to the 4 items in the 
+          navigation menu */
+        .nav-item:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .nav-item:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .nav-item:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .nav-item:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body id="bg-img">
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait">
+                    <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20200326201748/download312.png"
+                        alt="" />
+                </div>
+            </div>
+
+            <ul class="menu-nav">
+                <li class="nav-item current">
+                    <a href="#" class="nav-link">
+                        HOME
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        ABOUT ME
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        MY WORK
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        CONTACT ME
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        // Select dom items
+        const menuBtn =
+            document.querySelector(".menu-btn");
+
+        const menu =
+            document.querySelector(".menu");
+
+        const menuNav =
+            document.querySelector(".menu-nav");
+
+        const menuBranding =
+            document.querySelector(".menu-branding");
+
+        const navItems =
+            document.querySelectorAll(".nav-item");
+
+        // Set the initial state of the menu
+        let showMenu = false;
+
+        menuBtn.addEventListener("click", toggleMenu);
+
+        function toggleMenu() {
+            if (!showMenu) {
+                menuBtn.classList.add("close");
+                menu.classList.add("show");
+                menuNav.classList.add("show");
+                menuBranding.classList.add("show");
+                navItems.forEach((item) =>
+                    item.classList.add("show"));
+
+                // Reset the menu state
+                showMenu = true;
+            } else {
+                menuBtn.classList.remove("close");
+                menu.classList.remove("show");
+                menuNav.classList.remove("show");
+                menuBranding.classList.remove("show");
+                navItems.forEach((item) =>
+                    item.classList.remove("show"));
+
+                // Reset the menu state
+                showMenu = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
