@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>color font</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nabla:EDPT,EHLT@30..200,24&display=swap");
+
+      body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        place-content: center;
+        background-color: #000;
+      }
+
+      h1 {
+        font-size: 12vw;
+        font-family: Nabla;
+      }
+
+      @font-palette-values --Nabla {
+        font-family: Nabla;
+        base-palette: 2;
+      }
+
+      span {
+        animation: depth 1s ease-in-out alternate infinite;
+        position: relative;
+        display: inline-block;
+        font-variation-settings: "EDPT" 30;
+        font-palette: --Nabla;
+        @for $i from 1 through 12 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.1s;
+          }
+        }
+      }
+
+      @keyframes depth {
+        0% {
+          transform: translatex(0) translatey(0);
+        }
+        100% {
+          font-variation-settings: "EDPT" 200;
+          transform: translatex(0.15em) translatey(0.1em);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <span>C</span><span>O</span><span>L</span><span>O</span><span>R</span>
+      <span>F</span><span>O</span><span>N</span><span>T</span><span>S</span
+      ><span>!</span>
+    </h1>
+  </body>
+</html>

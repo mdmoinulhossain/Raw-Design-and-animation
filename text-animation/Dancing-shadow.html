@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dancing shadow</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #121212;
+        font-family: "Arial", sans-serif;
+      }
+
+      .shadow-dance-text {
+        font-size: 4rem;
+        color: #fff;
+        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+        animation: shadow-dance 2s infinite;
+      }
+
+      @keyframes shadow-dance {
+        0%,
+        100% {
+          text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+        }
+        50% {
+          text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shadow-dance-container">
+      <h1 class="shadow-dance-text">SHADOW</h1>
+    </div>
+  </body>
+</html>

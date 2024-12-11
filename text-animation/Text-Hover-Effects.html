@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Hover Effects</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        font-family: consolas;
+      }
+      h2 {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 6em;
+        color: transparent;
+        text-transform: uppercase;
+      }
+      h2 span:nth-child(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #000;
+        transition: 0.5s;
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+        overflow: hidden;
+      }
+      h2:hover span:nth-child(1) {
+        transform: translateY(-18px);
+      }
+      h2 span:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #000;
+        transition: 0.5s;
+        clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+        overflow: hidden;
+      }
+      h2:hover span:nth-child(2) {
+        transform: translateY(18px);
+      }
+      h2 span:nth-child(3) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) scaleY(0);
+        width: 91%;
+        color: #000;
+        background: #ff0;
+        font-size: 0.25em;
+        font-weight: 500;
+        letter-spacing: 0.7em;
+        text-align: center;
+        padding-left: 20px;
+        margin-left: 5px;
+        transition: 0.5s;
+      }
+      h2:hover span:nth-child(3) {
+        transform: translateY(-50%) scaleY(1);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Believe
+      <span>Believe</span>
+      <span>Believe</span>
+      <span>in yourself</span>
+    </h2>
+    <!-- //https://www.youtube.com/watch?v=4Dba1FJ-A0A&list=WL&index=132&t= -->
+  </body>
+</html>

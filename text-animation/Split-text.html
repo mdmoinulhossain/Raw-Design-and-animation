@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split text</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #121212;
+        font-family: "Arial", sans-serif;
+        color: #fff;
+        overflow: hidden;
+      }
+
+      .split-text-container {
+        display: flex;
+        font-size: 5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+        overflow: hidden;
+      }
+
+      .text-part {
+        display: inline-block;
+        position: relative;
+        transform: translateX(0);
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+
+      .text-part.left {
+        transform: translateX(-200%);
+        animation-name: slide-in-left;
+      }
+
+      .text-part.right {
+        transform: translateX(200%);
+        animation-name: slide-in-right;
+      }
+
+      @keyframes slide-in-left {
+        0% {
+          transform: translateX(-200%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slide-in-right {
+        0% {
+          transform: translateX(200%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="split-text-container">
+      <span class="text-part left">CON</span>
+      <span class="text-part right">JOINED</span>
+    </div>
+  </body>
+</html>

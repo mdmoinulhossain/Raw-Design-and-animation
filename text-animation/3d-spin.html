@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3d spin</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #222, #000);
+        font-family: "Arial", sans-serif;
+        perspective: 1000px;
+      }
+
+      .spin-text {
+        font-size: 5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fff;
+        text-shadow: 1px 1px 0px #e63946, 2px 2px 0px #f77f00,
+          3px 3px 0px #fcbf49, 4px 4px 0px #a8dadc, 5px 5px 0px #457b9d;
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+        animation: spin-3d 4s infinite linear;
+      }
+
+      @keyframes spin-3d {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="spin-container">
+      <h1 class="spin-text">3D SPIN</h1>
+    </div>
+  </body>
+</html>
